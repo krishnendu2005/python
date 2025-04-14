@@ -1,0 +1,48 @@
+#list
+fruits = ["apple", "banana", "cherry"]
+
+print("First fruit:", fruits[0])  
+print("Last fruit:", fruits[-1]) 
+
+fruits.append("date")
+print("List after adding a fruit:", fruits)
+
+# #tuple
+abc = ("apple", "banana", "cherry")
+
+banana_count = abc.count("banana")
+print("Number of 'banana' in the tuple:", banana_count)
+
+
+ #lsit & set 
+ 
+my_list = [1, 2, 2, 3, 4, 4, 5]  
+
+print("List:", my_list)  
+my_set = {1, 2, 2, 3, 4, 4, 5}   
+  
+print("Set:", my_set)    
+
+# #subset & superset
+A = {1, 2, 3}
+B = {1, 2, 3, 4, 5}
+
+print("Is A a subset of B?", A.issubset(B))  
+
+print("Is B a superset of A?", B.issuperset(A))  
+
+C = {1, 6}
+print("Is C a subset of B?", C.issubset(B))  
+
+print("Is B a superset of C?", B.issuperset(C))  
+
+
+# #difference & symmetric diff
+
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+
+print("A & B:", A.difference(B))  
+print("B & A:", B.difference(A))  
+
+print("A & B:", A.symmetric_difference(B))  
