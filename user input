@@ -1,0 +1,6 @@
+name=input("what is you name ")
+age=input("what is your age")
+n2=(f"hi {name} you are {age} years old ")
+print(name)
+print(age)
+print(n2)

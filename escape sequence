@@ -1,0 +1,8 @@
+# print(r"c:\desktop:\new.txt")
+# print(r"c:\desktop:\ten.txt")
+print("hello\nstudent")
+print("hello\tstudent")
+print("hello \'student\'")
+print("hello \"student\"")
+print("hello \\student")
+print(r"c:\desktop\new.txt")

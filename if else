@@ -1,0 +1,17 @@
+ #vote
+age=int(input("enter age:"))
+if age>18:
+    print("eligible")
+else:
+    print("not eligible")
+    #marksheet
+num=int(input("enter a no:"))
+if num>=100 & num>=90:
+    print("grade A")
+elif num>=90 & num>=80:
+    print("grade B")
+elif num>=80 & num>=70:
+    print("grade C")
+else:
+    print("Fail")
+    
