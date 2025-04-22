@@ -1,0 +1,23 @@
+f= open("python.txt","r")
+print(f.read())
+
+print(f.read(20))
+
+print(f.readline())
+
+print(f.readline())
+
+print(f.readline())
+
+print(f.readline(), end="")
+
+print(f.readline(), end="")
+
+print(f.readline(), end="")
+
+for x in f:
+  print(x, end=" ")
+
+list=f.readlines()
+
+print(list)
