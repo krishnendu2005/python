@@ -1,0 +1,71 @@
+# Airline Reservation System - Simple version
+# This program uses a text file to store ticket information
+
+def show_menu():
+    print("\n--- Airline Reservation System ---")
+    print("1. Book a Ticket")
+    print("2. View Tickets")
+    print("3. Cancel Ticket")
+    print("4. Exit")
+
+def book_ticket():
+    name = input("Enter your name: ")
+    from_city = input("From (City): ")
+    to_city = input("To (City): ")
+    seat = input("Seat Number: ")
+
+    ticket = name + "," + from_city + "," + to_city + "," + seat + "\n"
+
+    with open("tickets.txt", "a") as file:
+        file.write(ticket)
+
+    print("Ticket booked!")
+
+def view_tickets():
+    print("\nBooked Tickets:")
+    try:
+        with open("tickets.txt", "r") as file:
+            for line in file:
+                parts = line.strip().split(",")
+                print("Name:", parts[0], "| From:", parts[1], "| To:", parts[2], "| Seat:", parts[3])
+    except FileNotFoundError:
+        print("No tickets found.")
+
+def cancel_ticket():
+    name = input("Enter the name to cancel ticket: ")
+
+    try:
+        with open("tickets.txt", "r") as file:
+            lines = file.readlines()
+
+        with open("tickets.txt", "w") as file:
+            found = False
+            for line in lines:
+                if line.startswith(name + ","):
+                    found = True
+                    continue
+                file.write(line)
+
+        if found:
+            print("Ticket cancelled.")
+        else:
+            print("Ticket not found.")
+    except FileNotFoundError:
+        print("No tickets found.")
+
+# Main Program Loop
+while True:
+    show_menu()
+    choice = input("Choose (1-4): ")
+
+    if choice == '1':
+        book_ticket()
+    elif choice == '2':
+        view_tickets()
+    elif choice == '3':
+        cancel_ticket()
+    elif choice == '4':
+        print("Thank you. Goodbye!")
+        break
+    else:
+        print("Invalid choice. Try again.")
